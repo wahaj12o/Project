@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart Demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .product { margin-bottom: 10px; }
+        .cart-item { border-bottom: 1px solid #ccc; padding: 5px; }
+        #cartBox { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<h2>Products</h2>
+<div class="product">
+    <span>Shoes - Rs 2000</span>
+    <button class="add-btn" data-name="Shoes" data-price="2000">Add to Cart</button>
+</div>
+<div class="product">
+    <span>Shirt - Rs 1500</span>
+    <button class="add-btn" data-name="Shirt" data-price="1500">Add to Cart</button>
+</div>
+<div class="product">
+    <span>Watch - Rs 3000</span>
+    <button class="add-btn" data-name="Watch" data-price="3000">Add to Cart</button>
+</div>
+
+<hr>
+
+<h2>Your Cart</h2>
+<div id="cartBox"></div>
+<h3>Total Items: <span id="totalCount">0</span></h3>
+<h3>Total Price: Rs <span id="totalPrice">0</span></h3>
+
+<script src="cart.js"></script>
+</body>
+</html>
