@@ -2,31 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Document Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file (optional) -->
-    <script src="script.js" defer></script> <!-- Link to external JavaScript file (optional) -->
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+    *{
+     margin: 0;
+     padding: 0;
+    }
+    header{
+        display: flex;
+        background-color: red;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+    #h1{
+        font-size: 45px;
+        margin-right: 100px;
+        color: rgb(44, 42, 42);
+    }
+    #logo-div{
+        height: 85px;
+        width: 85px;
+    }
+    #logo-div img{
+        height: 85px;
+        width: 85px;
+        border-radius: 50%;
+    }
+    .nav-bar{
+        display: flex;
+        margin-right: 80px;
+        width: 50%;
+    }
+
+    a{
+            position: relative;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            letter-spacing: 1px;
+            color: rgb(0, 0, 0);
+            padding: 15px;
+        }
+
+        a:before{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            left: -4px;
+            top: 50px;
+        }
+
+        a:hover:before{
+            width: 100%;
+            transition: 0.8s ;
+        }
+       
+        a:hover{
+            transition: 1s;
+            color: aliceblue;
+        }
+
+        .carousel-inner {
+            height: 600px;
+            width: 100%;
+        }
+
+        .carousel-item {
+            height: 600px;
+            width: 100%;
+        }
+
+        .carousel-item img {
+            height: 600px;
+        }
+
+   
+</style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Webpage</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <div id="logo-div">
+            <img src="Images\logo.jpg">
+        </div>
+        <h1 id="h1">Pizzeria point</h1>
+        <nav class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <section>
-        <h2>Section Title</h2>
-        <p>This is some content for the webpage. You can add more text here.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Your Website Name</p>
-    </footer>
+     <!-- Slider Work -->
+     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?semt=ais_hybrid&w=740&q=80"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.pixabay.com/photo/2022/03/29/03/40/food-7098703_1280.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/736x/ae/64/fd/ae64fd89dec81365bd9230736b292828.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </body>
 </html>
