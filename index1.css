@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;           
+}
+.carousel-parent{
+    display: flex;
+    overflow: hidden;
+    height: 430px;
+    width: 98%;
+    margin-left: 12px;
+    position: relative;
+    background-color: aquamarine;
+}
+.carousel-wrapper{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    background-color: blueviolet;
+    transition: 1s;
+}
+.carousel-items{
+    min-width: 100%;
+    height: 430px;
+    background-color: brown;
+}
+.carousel-items img{
+    height: 430px;
+    width: 100%;
+    margin-left: 2px;
+}
+.control-prev,
+.control-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    color: aliceblue;
+    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.control-prev{
+    left: 10px;
+}
+.control-next{
+    right: 10px;
+}
+
+ /* Navbar Section */
+ .navbar-wrapping {
+    margin-top: 20px;
+    /* Use for horizontalliy align */
+    display: flex;
+    background: #ff0000;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Navbar div work */
+.navbar {
+    display: flex;
+    /* horizontal scrolling ko enable karta hai jab content container kai width sai ziyaada hou. Agr links container ki width sai ziyaada hai to scrolling show karega */
+    overflow-x: scroll;
+    /* Scroll ko smooth bana nai kai liya jab user arrow par click karai tou flow smooth ho */
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari) */
+.navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 20px;
+    font-family: Arial;
+    /* content ek hi line mai rahai line break na ho */
+    white-space: nowrap;
+    /* Space from top and right */
+    padding: 15px 15px;
+    position: relative;
+}
+
+/* Pseduo class */
+.navbar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 0%;
+    height: 5px;
+    background: white;
+    /* Initially width 0 */
+    /* transform: scale(0); */
+    /* transform-origin: left; */
+}
+
+/* Pseduo class */
+a:hover::before {
+    width: 100%;
+    transition: 0.8s;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    color: aliceblue;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.arrow:hover {
+    color: rgb(234, 255, 0);
+}
