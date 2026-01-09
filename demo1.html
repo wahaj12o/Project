@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider Navbar</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Cambria, serif;
+}
+
+/* Wrapper */
+.navbar-wrapper{
+    display:flex;
+    align-items:center;
+    background:red;
+    padding:10px;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    overflow-x:scroll; /* Allow horizontal scrolling */
+    scroll-behavior:smooth;
+}
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari) */
+.navbar::-webkit-scrollbar{
+    display: none;
+}
+
+/* Links */
+.navbar a{
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    white-space:nowrap;
+    font-size:18px;
+    position:relative;  /* Important for positioning the underline */
+}
+
+/* Hover underline animation */
+.navbar a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:5px;
+    width:0;  /* Initially no underline */
+    height:3px;
+    background:linear-gradient(90deg, yellow, orange);  /* Color of the underline */
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:0.3s ease;  /* Smooth animation */
+}
+
+.navbar a:hover::before{
+    width:100%;  /* On hover, the underline takes full width */
+    transform:scaleX(1);  /* Underline effect animation */
+}
+
+/* Arrows */
+.arrow{
+    background:none;
+    border:none;
+    color:white;
+    font-size:40px;  /* Increased size */
+    cursor:pointer;
+    padding:15px;
+}
+
+.arrow:hover{
+    color:yellow;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar-wrapper">
+
+    <button class="arrow left" onclick="scrollNav(-200)">&#10094;</button>
+
+    <div class="navbar" id="navbar">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Gallery</a>
+        <a href="#">Feedback</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Test Link 1</a>
+        <a href="#">Test Link 2</a>
+        <a href="#">Test Link 3</a>
+    </div>
+
+    <button class="arrow right" onclick="scrollNav(200)">&#10095;</button>
+
+</div>
+
+<script>
+function scrollNav(value){
+    console.log('Scrolling by', value);  // Debugging log to see if the function is being triggered
+    document.getElementById("navbar").scrollLeft += value;
+}
+</script>
+
+</body>
+</html>
