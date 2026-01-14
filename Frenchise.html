@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Franchise Locations</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbsyiziFwMoeUwap8zHRZeUg6TMZFYrTK_CQ&s");
+            background-size: contain;
+            height: 50vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .container {
+            /* grid parent container sai control hota hai. Hum container ko bata tai hai kai ek line mai 3 cards aai */
+            display: grid;
+            /* 1fr (1fraction => size same or part same) (3 =>ke poori line mein sirf teen hi div hougai. aur 1fr =>1fr ka pura concept hi Available Space (bachi hui jagah) par tika hua hai.Agr space hai tou div spread ho jai ga */
+            grid-template-columns: repeat(3 , 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .franchise-card {
+            background: rgb(255, 203, 131);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .franchise-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .franchise-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .franchise-card p {
+            color: rgb(46, 43, 43);
+            font-size: 0.9rem;
+        }
+
+        .btn-direction {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-direction:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Our Franchise Locations</h1>
+
+    <div class="container">
+        <div class="franchise-card">
+            <h3>California Pizza - DHA Jami Commercial</h3>
+            <p> 2c 19th Commercial St, D.H.A Phase II Extension Phase 2 Ext Defence Housing Authority, Karachi, 75100</p>
+            <a href="https://maps.app.goo.gl/9z3WcqRYvD2AxVEg6" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+
+        <div class="franchise-card">
+            <h3>California Pizza - North Nazimabad (Hyderi)</h3>
+            <p> Plot No، Hyderi Shop No.1, Saima Paari Tower، D-7, Block D Karachi, 74600</p>
+            <a href="https://maps.app.goo.gl/vnRhyV2v1FSy45yM7" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+
+        <div class="franchise-card">
+            <h3>California Pizza - Khayaban e Shamsheer</h3>
+            <p>  2 Saba Ave, DHA Phase 5 Saba Commercial Area Defence V Defence Housing Authority, Karachi, 75500</p>
+            <a href="https://maps.app.goo.gl/pvv8LYmFjwYXnChx6" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+
+        <div class="franchise-card">
+            <h3>California Pizza - Johar Chowrangi, Gulistan e Johar</h3>
+            <p>Mustafa Arcade, Captain Fareed Bukhari Shaheed Road</p>
+            <a href="https://maps.app.goo.gl/okLq7w2SXsTLy1WM7" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+
+        <div class="franchise-card">
+            <h3>California Pizza - North Karachi Sector11-B</h3>
+            <p>  Office # 305, Kings Trade Centre, Block 3-A Block 3 A Gulistan-e-Johar, Karachi, 75290</p>
+            <a href="https://maps.app.goo.gl/RiseSZym4eZJJ3pX6" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+
+        <div class="franchise-card">
+            <h3>California Pizza - FB Area Branch</h3>
+            <p>  Plot number C-13 , Block 06, Town, AL REHMAN TOWER, Shahrah-e-Pakistan, Federal B Area Block 6 Gulberg Town, Karachi, 75950</p>
+            <a href="https://maps.app.goo.gl/p6HcjLE7XswzjDNd8" target="_blank" class="btn-direction">Get Direction</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- Ek Chhoti si Misaal (Example)
+Farz karein aapke paas ek box hai aur usme thoda text hai:
+
+width: 300px; Agar aap box ke andar bohot zyada text bhar dein jo 300px se bahar ja raha ho, to box bada nahi hoga, text bahar girne lagega (overflow).
+
+min-width: 300px; Agar aap card ko grid mein use kar rahe hain, to min-width ye ensure karta hai ke card itna "pichak" (squeeze) na ho jaye ke uske andar ka text parha hi na jaye. -->
+
+<!-- auto-fit"Cards ko line mein tab tak bharo jab tak jagah hai.
+    "min (300px)"Khabardar! Kisi bhi card ko 300px se chhota mat karna.
+    "max (1fr)"Agar line mein extra jagah bache, to cards ko bada karke wo jagah bhar do." -->
