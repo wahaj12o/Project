@@ -5,33 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index1.css"> 
 </head>
 <body>
-    <div class="carousel-parent">
-        <div class="carousel-wrapper" id="carousel-wrapper">
-        <div class="carousel-items">
-            <img src="\Images\pizza1.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="pizzaCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
-        <div class="carousel-items">
-            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1765608075-WhatsApp-Image-2025-12-13-at-11-20-37-AM.webp&w=1080&q=90">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1765012568-WhatsApp-Image-2025-12-06-at-2-00-19-PM.webp&w=1080&q=90" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1766158994-CP-Winter-Treats-Web-Cover-11zon.webp&w=1080&q=90" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767078096-CP-New-Year-Deal-Web-Cover.webp&w=1080&q=90" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1765608075-WhatsApp-Image-2025-12-13-at-11-20-37-AM.webp&w=1080&q=90" class="d-block w-100" alt="...">
+          </div>
         </div>
-        <div class="carousel-items">
-            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1765012568-WhatsApp-Image-2025-12-06-at-2-00-19-PM.webp&w=1080&q=90">
-        </div>
-        <div class="carousel-items">
-            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1766158994-CP-Winter-Treats-Web-Cover-11zon.webp&w=1080&q=90">
-        </div>
-        </div>
-        <div class="control-prev" onclick="reflex(-1)">&#10094;</div>
-        <div class="control-next" onclick="reflex(1)">&#10095;</div>
-    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#pizzaCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
+      </div>
  
     <!-- Navbar Section -->
-    <div id="nav">
-        <div class="navbar-wrapping">
-            <button class="arrow left" onclick="scrollNavbar(-200)">&#10094;</button>
-            <div class="navbar" id="navbar">
+        <div class="navbar-wrapper">
+            <button class="arrows" onclick="scrollNavbar(-200)">&#10094;</button>
+            <div class="nav-scroller-content" id="navbarScroller">
                 <a href="#">New Year Deals</a>
                 <a href="#">Stuffed Pizza Roll</a>
                 <a href="#">Winter Treat Deals</a>
@@ -44,9 +57,280 @@
                 <a href="#">Say Less, Staff More</a>
                 <a href="#">Crunch Corner</a>
             </div>
-            <button class="arrow right" onclick="scrollNavbar(200)">&#10095;</button>
+            <button class="arrows" onclick="scrollNavbar(200)">&#10095;</button>
+        </div>
+        <section id="category1">
+          <div class="logo">
+              <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767106567-category-banner-classic-pizza.jpg%3Fq%3D10&w=1920&q=75">
+          </div>
+          <div class="Pizza">
+              <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762503099-arizona-cream.webp%3Fq%3D10&w=640&q=75">
+              <div class="info">
+              <h1 id="h1">Arizona Cream</h1>
+              <p class="p1">Made in Creamy Sauce , Chicken Tikka , Onion ,Cheese</p>
+              <p class="p1" id="p2">Rs.599</p>
+              <button class="b1">Add</button>
+              </div>
+          </div>
+  
+          <div class="Pizza">
+              <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153038-chicken%20tikka%20mexican%20treat%20creamy%20tikka.webp%3Fq%3D10&w=640&q=75">
+              <div class="info">
+              <h1 id="h1">Mexican Treat</h1>
+              <p class="p1">Chicken Tikka, Garlic Sauce & Onions , Green chilly</p>
+              <p class="p1" id="p2">Rs.599</p>
+              <button class="b1">Add</button>
+              </div>
+          </div>
+  
+          <div class="Pizza">
+              <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153119-cheese%20%20pepperoni.webp%3Fq%3D10&w=640&q=75">
+              <div class="info">
+              <h1 id="h1">Cheese & Pepperoni</h1>
+              <p class="p1">Mozzarella Cheese, Pizza Sauce Topped with Beef Pepperoni</p>
+              <p class="p1" id="p2">Rs.599</p>
+              <button class="b1">Add</button>
+              </div>
+          </div>
+
+          <div class="Pizza">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153029-chicken%20tikka%20mexican%20treat%20creamy%20tikka.webp%3Fq%3D10&w=640&q=75">
+            <div class="info">
+            <h1 id="h1">Chicken Tikka</h1>
+            <p class="p1">Chicken Tikka, Pizza Sauce & Onions</p>
+            <p class="p1" id="p2">Rs.599</p>
+            <button class="b1">Add</button>
+            </div>    
+        </div>
+
+        <div class="Pizza">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153020-veggie%20lover.webp%3Fq%3D10&w=640&q=75">
+          <div class="info">
+          <h1 id="h1">Veggie Lover</h1>
+          <p class="p1">Onions, Capsicum, Mushrooms, Black Olive & Tomatoes</p>
+          <p class="p1" id="p2">Rs.599</p>
+          <button class="b1">Add</button>
+          </div>    
+      </div>
+
+      <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762500216-chicken-fajita---arizona-cream.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h1">Chicken Fajita</h1>
+        <p class="p1">Chicken Fajita, Pizza Sauce, Capsicum & Onions</p>
+        <p class="p1" id="p2">Rs.599</p>
+        <button class="b1">Add</button>
+        </div>    
+    </div>
+
+    <div class="Pizza">
+      <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762499941-chicken-supreme.webp%3Fq%3D10&w=640&q=75">
+      <div class="info">
+      <h1 id="h1">Chicken Supreme</h1>
+      <p class="p1">Fajita &Tikka Chicken , Capsicum, Onions,Black Olives</p>
+      <p class="p1">Rs.599</p>
+      <button class="b1">Add</button>
+      </div>    
+  </div>
+
+  <div class="Pizza">
+    <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762152914-cheese%20lover.webp%3Fq%3D10&w=640&q=75">
+    <div class="info">
+    <h1 id="h1">Cheese Lover</h1>
+    <p class="p1">Pizza Sauce, Marvelous Heavy Topping of Mozzarella Cheese</p>
+    <p class="p1">Rs.599</p>
+    <button class="b1">Add</button>
+    </div>    
+</div>
+      </section>
+
+      <section id="category2">
+        <div class="logo">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767106637-category-banner-premium-pizza.jpg%3Fq%3D10&w=1080&q=75">
+        </div>
+        <div class="Pizza">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153304-Miami%20beast%20Fajita%20Sicilian.webp%3Fq%3D10&w=640&q=75">
+            <div class="info">
+            <h1 id="h1">Miami Beast</h1>
+            <p class="p1">Chicken Fajita, Garlic Sauce with Green Chilli, Green Pepper</p>
+            <p class="p1">Rs.599</p>
+            <button class="b1">Add</button>
+            </div>
+        </div>
+
+        <div class="Pizza">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153288-chicken%20tikka%20mexican%20treat%20creamy%20tikka.webp%3Fq%3D10&w=640&q=75">
+            <div class="info">
+            <h1 id="h1">Creamy Tikka</h1>
+            <p class="p1">Chicken Tikka , Creamy Sauce & Onions.</p>
+            <p class="p1">Rs.599</p>
+            <button class="b1">Add</button>
+            </div>
+        </div>
+
+        <div class="Pizza">
+            <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153276-seekh%20kabab.webp%3Fq%3D10&w=640&q=75">
+            <div class="info">
+            <h1 id="h1">Seekh Kabab</h1>
+            <p class="p1">Seekh Kabab with Creamy Chaska Sauce & Onions</p>
+            <p class="p1">Rs.599</p>
+            <button class="b1">Add</button>
+            </div>
+        </div>
+
+        <div class="Pizza">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153266-Miami%20beast%20Fajita%20Sicilian.webp%3Fq%3D10&w=640&q=75">
+          <div class="info">
+          <h1 id="h1">Fajita Sicilian</h1>
+          <p class="p1">Chicken Fajita, Capsicum, Pizza Sauce, Green Chilli & Onions</p>
+          <p class="p1">Rs.599</p>
+          <button class="b1">Add</button>
+          </div>    
+      </div>
+    </section>
+
+    <section id="category3">
+      <div class="logo">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767106729-category-banner-deluxe-pizza.jpg%3Fq%3D10&w=1080&q=75">
+      </div>
+      <div class="Pizza">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153471-ohio%20thrill.webp%3Fq%3D10&w=640&q=75">
+          <div class="info">
+          <h1 id="h1">Ohio Thrill</h1>
+          <p class="p1">Jamaican Chicken, Onions, Capsicum, Red & Green Chilli</p>
+          <p class="p1">Rs.599</p>
+          <button class="b1">Add</button>
+          </div>
+      </div>
+
+      <div class="Pizza">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153459-florida%20feast.webp%3Fq%3D10&w=640&q=75">
+          <div class="info">
+          <h1 id="h1">Florida Feast</h1>
+          <p class="p1">Made in Chipotle Sauce, Chicken Fajita, Black olives</p>
+          <p class="p1">Rs.599</p>
+          <button class="b1">Add</button>
+          </div>
+      </div>
+
+      <div class="Pizza">
+          <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153410-sriracha.webp%3Fq%3D10&w=640&q=75">
+          <div class="info">
+          <h1 id="h1">Sriracha</h1>
+          <p class="p1">Sriracha Sauce with Chicken, Green Chilli, Mushrooms</p>
+          <p class="p1">Rs.599</p>
+          <button class="b1">Add</button>
+          </div>
+      </div>
+
+      <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153446-chipotle.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h1">Chipotle</h1>
+        <p class="p1">Chipotle Sauce Topped with Jamaican Meat, Green Pepper</p>
+        <p class="p1">Rs.599</p>
+        <button class="b1">Add</button>
+        </div>    
+    </div>
+
+    <div class="Pizza">
+      <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153401-ranch.webp%3Fq%3D10&w=640&q=75">
+      <div class="info">
+      <h1 id="h1">Ranch</h1>
+      <p class="p1">Ranch Sauce, Chicken, Mozzarella Cheese , olives</p>
+      <p class="p1">Rs.599</p>
+      <button class="b1">Add</button>
+      </div>    
+  </div>
+
+  <div class="Pizza">
+    <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762153390-malai%20boti.webp%3Fq%3D10&w=640&q=75">
+    <div class="info">
+    <h1 id="h1">Malai Boti</h1>
+    <p class="p1">Creamy Chaska Sauce, Malai Boti, Tomato Diced & Cheese</p>
+    <p class="p1">Rs.599</p>
+    <button class="b1">Add</button>
+    </div>    
+</div>
+  </section>
+
+  <section id="category4">
+    <div class="logo">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767106842-category-banner-say-less-stuff-more.jpg%3Fq%3D10&w=1080&q=75">
+    </div>
+    <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163475-alfredo%20fusion.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h1">Alfredo Fusion</h1>
+        <p class="p1">Fettuccine pasta in white sauce, mushrooms, chicken tikka meat</p>
+        <p class="p1">Rs.749</p>
+        <button class="b1">Add</button>
         </div>
     </div>
+
+    <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163467-mexican%20sandwich.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h1">Mexican Sandwich</h1>
+        <p class="p1">Fresh Bun, Chicken Fajita, Iceberg Lettuce, Tomato</p>
+        <p class="p1">Rs.899</p>
+        <button class="b1">Add</button>
+        </div>
+    </div>
+
+    <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163454-chicken%20pasta.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h1">Chicken Pasta</h1>
+        <p class="p1">Elbow Pasta in White Sauce with Veggies & Cheese</p>
+        <p class="p1">Rs.599</p>
+        <button class="b1">Add</button>
+        </div>
+    </div>
+
+    <div class="Pizza">
+      <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762162496-lasagna.webp%3Fq%3D10&w=640&q=75">
+      <div class="info">
+      <h1 id="h1">Chicken Lasagna</h1>
+      <p class="p1">Lasagna Strips, Meat, Topped with White Sauce & Cheese</p>
+      <p class="p1">Rs.699</p>
+      <button class="b1">Add</button>
+      </div>    
+  </div>
+
+  <div class="Pizza">
+    <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163447-stuffed%20pizza%20roll.webp%3Fq%3D10&w=640&q=75">
+    <div class="info">
+    <h1 id="h1">Stuffed Pizza Roll</h1>
+    <p class="p1">Fresh Pizza Dough Stuffed with Chicken Tikka, Olives, Chilli</p>
+    <p class="p1">Rs.499</p>
+    <button class="b1">Add</button>
+    </div>    
+</div>
+  </section>
+
+  <section id="category5">
+    <div class="logo">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1767106955-category-banner-crunch-corner.jpg%3Fq%3D10&w=1080&q=75">
+    </div>
+    <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163517-burger.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h2">California Zinger Krunch</h1>
+        <p class="p2">Rs.549</p>
+        <button class="b2">Add</button>
+        </div>
+    </div>
+
+    <div class="Pizza">
+        <img src="https://californiapizza.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fupload%2F1762163511-fried%20chicken.webp%3Fq%3D10&w=640&q=75">
+        <div class="info">
+        <h1 id="h2">02 Pcs Fried Chicken</h1>
+        <p class="p2">Rs. 549</p>
+        <button class="b2">Add</button>
+        </div>
+    </div>
+  </section>
     <script src="index1.js">
     </script>
 </body>
