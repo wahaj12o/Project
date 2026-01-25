@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282828;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+.container {
+    /* grid parent container sai control hota hai. Hum container ko bata tai hai kai ek line mai 3 cards aai */
+    display: grid;
+    /* 1fr (1fraction => size same or part same) (3 =>ke poori line mein sirf teen hi div hougai. aur 1fr =>1fr ka pura concept hi Available Space (bachi hui jagah) par tika hua hai.Agr space hai tou div spread ho jai ga */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.franchise-card {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(28, 58, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 5px solid rgb(255, 179, 0);
+}
+
+.franchise-card:hover {
+    transform: translateY(-5px);
+    transition: 1.2s
+}
+
+.franchise-card h3 {
+    margin-top: 0;
+    color: rgb(252, 0, 0);
+}
+
+.franchise-card p {
+    color: rgb(252, 0, 0);
+    font-size: 0.9rem;
+}
+
+.btn-direction {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-direction:hover {
+    background-color: #0056b3;
+}
+
+
+/* Foot-panel */
+
+footer{
+    margin-top: 100px;
+}
+
+.foot-panel1{
+    background-color: #121212;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.foot-panel1 a{
+    color: rgb(255, 251, 0);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.foot-panel2{
+    background-color: #121212;
+    height:330px;
+    color: rgb(255, 251, 0);
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid black;
+}
+
+ul{
+    margin-top: 70px;
+}
+
+ul a{
+    display: block;
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+
+}
+
+.foot-panel3{
+    background-color: #121212;
+    height: 120px;
+    border-top: 2px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.foot-logo{
+    background-image: url("https://assets.indolj.io/upload/1751470831-1658409985-Logo-california-(1).png?q=10");
+    background-size: cover;
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+}
+
+.foot-panel4{
+    border-top: 1px solid black;
+    height: 60px;
+    background-color: #121212;
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    
+}
+
+
+
+.foot-pages{
+    padding-top: 10px;
+}
+
+.copyright{
+    padding-top: 10px;
+}

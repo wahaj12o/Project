@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+     }  
+     
+     body{
+        background-color: rgba(18 , 18 , 18 , 0.9);
+     }
+     .information{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-top: 60px;
+        margin-left: 150px;
+        height: 120px;
+        width: 80%;
+        background-color: rgba(18, 18, 18, 0.9);
+        border: 2px solid rgb(255, 251, 0);
+     }
+     .information h1{
+        padding-left: 330px;
+        padding-top: 20px;
+        color: rgb(252, 252, 0);
+        font-weight: bolder;
+        font-size: 40px;
+        font-family: sans-serif;
+     }
+
+     .information p{
+        color: rgb(252, 0, 0);
+        padding-top: 15px;
+        padding-left: 310px;
+        font-size: 20px;
+        font-family: sans-serif;
+     }
+
+     span{
+        color: rgb(255, 0, 0);
+     }
+
+     #hero-section{
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        margin-left: 150px;
+        padding-top: 30px;
+        padding-bottom:50px;
+        border-top: 2px solid black;
+        height: 80%;
+        width: 80%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: 2px solid rgb(255, 255, 0);
+     }
+
+     #hero-section h1{
+        height: 30px;
+        width: 400px;
+        margin-left: 45px;
+        margin-top: -10px;
+        color: rgb(225, 0, 0);
+        font-size: 28px ;
+     }
+
+     #input1 , #input2{
+        display: block;
+        height: 40px;
+        width: 450px;
+        position: relative;
+        top: 40px;
+        right: 190px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        padding-left: 10px;
+        font-family: sans-serif;
+        border: 2px solid #ff0000; 
+        border-radius: 6px;      
+     }
+     select , textarea , button{
+        position: relative;
+        top: 40px;
+        right: 190px;
+        display: block;
+        height: 40px;
+        width: 450px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        padding-left: 10px;
+        font-family: sans-serif;
+        border: 2px solid #ff0000;
+        border-radius: 6px;
+     }
+ 
+     select{
+        width: 464px;
+     }
+
+     textarea{
+        padding-top: 6px;
+     }
+     button{
+        width: 240px;
+        height: 55px;
+        font-size: 20px;
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        font-family: sans-serif;
+     }
+
+      .find-us h2 , p{
+        display: block;
+        padding: 5px;
+        font-family: sans-serif;
+      }
+
+      .find-us h2{
+        font-size: 25px;
+        color: rgb(255, 0, 0);
+        text-decoration: underline;
+      }
+
+      .find-us p{
+        font-size: 18px;
+        color: orange;
+      }
+
+      /* Foot-panel */
+
+footer{
+    margin-top: 100px;
+}
+
+.foot-panel1{
+    background-color: #121212;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.foot-panel1 a{
+   color: rgb(255, 251, 0);
+   font-size: 1.5rem;
+   text-decoration: none;
+}
+.foot-panel2{
+    background-color: #121212;
+    height:330px;
+    color: rgb(255, 251, 0);
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid black;
+}
+
+ul{
+    margin-top: 70px;
+}
+
+ul a{
+    display: block;
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-left: 5px;
+
+}
+
+.foot-panel3{
+    background-color: #121212;
+    height: 120px;
+    border-top: 2px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.foot-logo{
+    background-image: url("https://assets.indolj.io/upload/1751470831-1658409985-Logo-california-(1).png?q=10");
+    background-size: cover;
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+}
+
+.foot-panel4{
+    border-top: 1px solid black;
+    height: 60px;
+    background-color: #121212;
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    
+}
+
+.foot-pages{
+    padding-top: 10px;
+}
+
+.copyright{
+    padding-top: 10px;
+}
+    </style>
+</head>
+
+<body>
+<div class="information">
+    <h1>California Pizza <span>🍕</span></h1>
+    <p>Questions? Cravings? We've got you covered.</p>
+</div> 
+<section id="hero-section">
+  <h1>Send a Message</h1>
+  <div class="form">
+  <form>
+  <input type="text" id="input1" placeholder="Your Name" required>
+  <input type="text" id="input2" placeholder="Email Address" required>
+  <select>
+    <option>General Inquiry</option>
+    <option>Catering Request</option>
+    <option>Order Issue</option>
+    <option>Feedback</option>
+</select>
+<textarea rows="5" placeholder="What's on your mind?"></textarea>
+<button type="submit" class="btn">Send My Message 🍕</button>
+</form>
+</div>
+
+<div class="find-us">
+    <h2>Find Us</h2>
+    <p>📍 Address: Main Bahdurabad 6-C, Bahadur Yar Jang CHS, Karachi</p>
+    <p>📞 Phone: (021) 111 753 753</p>
+
+    <h2>Store Hours</h2>
+    <p>Mon-Thu :  <br>11:00 AM - 10:00 PM</p>
+    <p>Fri-Sat :  <br>11:00 AM - Midnight</p>
+    <p>Sunday :   <br>12:00 PM - 9:00 PM</p>
+</div>
+</section>
+
+<!-- Footer -->
+
+<footer>
+   <div class="foot-panel1">
+      <a href="index1.html">Back to top</a>
+   </div>
+
+   <div class="foot-panel2">
+       <ul>
+           <p>Get to Know About Pizza Category</p>
+           <a>Stuffed Pizza Roll</a>
+           <a>Winter Treats Deals</a>
+           <a>Class Flavours Pizza</a>
+           <a>Premium Flavour Pizza</a>
+           <a>Double Decker Pizza</a>
+           <a>Pizza Deal</a>
+           <a>Pick Your Pair</a>
+           <a>Say Less, Staff More</a>
+           
+       </ul>
+
+       <ul>
+           <p>Contact Us</p>
+           <a>📞 021-111-753-753</a>
+           <a>📧 callcenter@ca-pizza.com.pk</a>
+           <a>📍 Up More</a>
+           </ul>
+
+       <ul>
+           <p>Follow Us</p>
+           <a>Facebook</a>
+           <a>Instagram</a>
+           <a>Twitter</a>
+       </ul>
+
+       <ul>
+           <p>Get The App!</p>
+           <a>App is where the fun is! It's Easy, Fast and Convenient</a>
+       </ul>
+   </div>
+
+   <div class="foot-panel3">
+       <div class="foot-logo"></div>
+   </div>
+
+   <div class="foot-panel4">
+       <div class="foot-pages">
+           <a>Conditions of Use</a>
+           <a>Privacy Notice</a>
+           <a>Consumer Health Data Privacy Disclosure</a>
+           <a>Your Ads Privacy Choices</a>
+       </div>
+       <div class="copyright">© 1996-2025, Dealexpress.com, Inc. or its affiliates</div>
+   </div>
+</footer>
+</body>
+
+</html>

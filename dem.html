@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Slice Shop</title>
+    <style>
+        :root {
+            --primary: #D32F2F; /* Pizza Red */
+            --secondary: #FBC02D; /* Cheese Yellow */
+            --dark: #212121;
+            --light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Form Styling */
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #b71c1c;
+        }
+
+        /* Info Styling */
+        .info-card h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+
+        .hours-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 0; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🍕 The Slice Shop</h1>
+        <p>Questions? Cravings? We've got you covered.</p>
+    </header>
+
+    <div class="contact-grid">
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="#">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select>
+                    <option>General Inquiry</option>
+                    <option>Catering Request</option>
+                    <option>Order Issue</option>
+                    <option>Feedback</option>
+                </select>
+                <textarea rows="5" placeholder="What's on your mind?"></textarea>
+                <button type="submit" class="btn">Send My Message 🍕</button>
+            </form>
+        </div>
+
+        <div class="info-card">
+            <h2>Find Us</h2>
+            <p><strong>📍 Address:</strong> 123 Pepperoni Lane, NY 10001</p>
+            <p><strong>📞 Phone:</strong> <a href="tel:5550123456" style="color: var(--primary);">(555) 012-3456</a></p>
+            
+            <h3>Store Hours</h3>
+            <table class="hours-table">
+                <tr><td>Mon - Thu</td><td>11:00 AM - 10:00 PM</td></tr>
+                <tr><td>Fri - Sat</td><td>11:00 AM - Midnight</td></tr>
+                <tr><td>Sunday</td><td>12:00 PM - 9:00 PM</td></tr>
+            </table>
+
+            <div style="margin-top: 30px;">
+                <h3>Delivery Zone</h3>
+                <p>We deliver within 5 miles. For further distances, find us on the major delivery apps!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

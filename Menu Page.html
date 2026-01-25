@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Download</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* CSS: Page ko khoobsurat banane ke liye */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .menu-container {
+            background: rgba(18 , 18 , 18 , 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 95%;
+        }
+
+        .menu-container h2 {
+            color: rgb(242, 255, 0);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        /* Image ki setting */
+        #menu-image {
+            max-width: 100%;
+            height: 600px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+
+        /* Download Button ki styling */
+        .download-btn {
+            margin-top: 25px;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h2>Our Special Menu</h2>
+        
+        <img id="menu-image" src="Images (Folder)\Californa.jpg" alt="Menu Card">
+
+        <br>
+
+        <button id="download-now" class="download-btn">Download Menu (Image)</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#download-now').on('click', function() {
+                // Image ka source lena
+                var imagePath = $('#menu-image').attr('src');
+                
+                // Virtual link banana download ke liye
+                var link = document.createElement('a');
+                link.href = imagePath;
+                link.download = 'Restaurant-Menu.jpg'; // File kis naam se download hogi
+                
+                // Link ko click karwana
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+    </script>
+
+</body>
+</html>
