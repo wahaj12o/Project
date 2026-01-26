@@ -209,6 +209,67 @@ ul a{
 .copyright{
     padding-top: 10px;
 }
+
+/* --- Copy and paste this at the very bottom of your CSS --- */
+
+@media (max-width: 1100px) {
+    .information, #hero-section {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 90% !important;
+        height: auto !important; /* Height auto taake content fit ho jaye */
+    }
+
+    .information h1, .information p {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+
+    #hero-section {
+        flex-direction: column; /* Flex items ko upar niche karne ke liye */
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #hero-section h1 {
+        margin-left: 0 !important;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    #input1, #input2, select, textarea, button, .find-us {
+        position: static !important; /* Relative position aur right/left ko khatam karne ke liye */
+        width: 100% !important;
+        max-width: 450px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    select {
+        width: 100% !important; /* Select box ki width fix */
+        max-width: 464px;
+    }
+}
+
+@media (max-width: 600px) {
+    .foot-panel2 {
+        flex-direction: column;
+        height: auto !important;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    ul {
+        margin-top: 20px !important;
+    }
+}
+
+/*Centered Layout: margin-left: 150px ki wajah se aapka box right side par bhag raha tha, ab wo mobile par center ho jayega.
+
+Reset Position: Jo aapne right: 190px use kiya tha, wo mobile par elements ko screen se bahar le jata hai. position: static usay wapis apni jagah le aayega.
+
+Stacking: flex-direction: column karne se aapka form aur "Find Us" wala section ek doosre ke niche aa jayenge, jo mobile ke liye zaroori hai.*/
     </style>
 </head>
 

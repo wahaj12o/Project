@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Pizza</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Full screen fix */
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+             /* Video load hone se pehle black rahega */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Video ko zabardasti full screen par fit karna */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Video stretch nahi hogi */
+            z-index: -1;
+        }
+
+        /* Buttons aur Heading ki setting */
+        .ui-layer {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-btn {
+            position: absolute;
+            top: 30px;
+            padding: 10px 20px;
+            background: #ff0000;
+            color: #ffff00;
+            border: 2px solid #ffff00;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .orange-btn {
+            background: #ff8c00;
+            padding: 15px 40px;
+            font-size: 24px;
+            border: 4px solid #ff0000;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 220px;
+            margin-left: 15px;
+        }
+
+        .orange-btn a{
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Normal Popup (Transparent Background) */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color:  rgba(18 , 18 , 18 , 0.9);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            
+            border: 3px solid #ffff00;
+            padding: 40px;
+            width: 320px;
+            text-align: center;
+            color: white;
+        }
+
+        .modal-box h2 { color: #ffff00; margin-bottom: 10px; }
+        .modal-box p { color: #ff0000; margin-bottom: 20px; font-weight: bold; }
+
+        .close-btn {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="Images (Folder)\video-file2.mp4" type="video/mp4">
+        </video>
+
+    <div class="ui-layer">
+        <button class="welcome-btn" onclick="toggleModal(true)">WELCOME</button>
+        
+        <button class="orange-btn" onclick="toggleModal(true)"><a href="index1.html">CLICK HERE</a></button>
+    </div>
+
+    <div id="welcomePopup" class="modal-bg">
+        <div class="modal-box">
+            <h2>Welcome!</h2>
+            <p>Welcome to our website!</p>
+            <button class="close-btn" onclick="toggleModal(false)">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(show) {
+            document.getElementById('welcomePopup').style.display = show ? 'flex' : 'none';
+        }
+    </script>
+
+</body>
+</html>

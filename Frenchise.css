@@ -145,3 +145,36 @@ ul a{
 .copyright{
     padding-top: 10px;
 }
+
+
+/* --- Sirf ye hissa footer ke niche add karein --- */
+
+@media (max-width: 992px) {
+    .container {
+        /* Jab screen choti ho tou 3 ki jagah 2 cards dikhai dein */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        /* Mobile par cards ek ke niche ek (1 column) ho jayein */
+        grid-template-columns: 1fr;
+    }
+
+    .foot-panel2 {
+        /* Footer links mobile par center ho jayein aur height auto ho jaye */
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+    ul {
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Mobile par heading thodi choti */
+    }
+}
