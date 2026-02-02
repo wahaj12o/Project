@@ -26,7 +26,7 @@ h1 {
 }
 
 .franchise-card {
-    background-color: #000000;
+    background-color: rgba(18 , 18 , 18 , 0.9);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(28, 58, 255, 0.1);

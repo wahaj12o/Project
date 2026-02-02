@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cart-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.radio-group label {
+    display: block;
+    background: #f8f9fa;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.radio-group label:hover {
+    background: #e2e6ea;
+}
+
+.flavor-dropdown {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.confirm-btn {
+    background-color: #e67e22; /* Aapki site ka primary color yahan change karein */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+}
+
+.confirm-btn:hover {
+    background-color: #d35400;
+}
+    </style>
+</head>
+<body>
+    <div id="cart-overlay" class="cart-container">
+    <div id="size-section">
+        <h3>Select Size</h3>
+        <div class="radio-group">
+            <label><input type="radio" name="size" value="Small" onclick="showFlavors()"> Small</label>
+            <label><input type="radio" name="size" value="Medium" onclick="showFlavors()"> Medium</label>
+            <label><input type="radio" name="size" value="Large" onclick="showFlavors()"> Large</label>
+            <label><input type="radio" name="size" value="Extra Large" onclick="showFlavors()"> Extra Large</label>
+        </div>
+    </div>
+
+    <div id="flavor-section" style="display: none; margin-top: 20px;">
+        <h3>Choose Flavor</h3>
+        <select id="flavor-list" class="flavor-dropdown">
+            <option value="Fajita">Chicken Fajita</option>
+            <option value="Tikka">Chicken Tikka</option>
+            <option value="Supreme">Chicken Supreme</option>
+            <option value="Veggie">Veggie Lover</option>
+            <option value="Cheese">Double Cheese</option>
+            <option value="Bbq">BBQ Buzz</option>
+            <option value="Pepperoni">Pepperoni Feast</option>
+            <option value="Tandoori">Tandoori Hot</option>
+            <option value="Creamy">Creamy Tikka</option>
+            <option value="Afghani">Afghani Feast</option>
+        </select>
+        <br><br>
+        <button class="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <div id="thank-you-msg" style="display: none;">
+        <h2 style="color: #27ae60;">🎉 Thank You for your Order!</h2>
+        <p>Your delicious meal is being prepared.</p>
+    </div>
+</div>
+<script>
+    function showFlavors() {
+    // Size select hote hi flavor section dikhayein
+    document.getElementById('flavor-section').style.display = 'block';
+    
+    // Smoothly scroll down to flavors
+    document.getElementById('flavor-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function confirmOrder() {
+    // Size aur Flavor check karein (Optional)
+    const selectedFlavor = document.getElementById('flavor-list').value;
+    
+    // Hide previous sections
+    document.getElementById('size-section').style.display = 'none';
+    document.getElementById('flavor-section').style.display = 'none';
+    
+    // Show Thank You message
+    document.getElementById('thank-you-msg').style.display = 'block';
+}
+</script>
+</body>
+</html>

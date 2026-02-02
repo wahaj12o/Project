@@ -8,30 +8,37 @@
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box; /* Padding se width kharab nahi hogi */
         }
-        /* Poori screen ka background black */
+        
         body {
-            background-color: rgba(40, 40, 40, 0.8); /* Transparent Black */
+            background-color: rgba(40, 40, 40, 0.8);
             font-family: Arial, sans-serif;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding-top: 40px;
+            /* Flexbox use kiya hai center karne ke liye */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        
+        /* Form section ko center karne ke liye container */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
         .feedback-container {
             background-color: #000000;
             padding: 40px;
-            margin-bottom: 80px;
             border-radius: 15px;
             border: 2px solid rgb(255, 255, 0);
-            width: 400px;
-            margin-left: 350px;
+            width: 100%;
+            max-width: 450px; /* Fixed margin-left hata kar max-width lagayi */
             text-align: center;
         }
 
-        
         h2 {
             color: #FFD700; 
             font-weight: bold;
@@ -40,7 +47,6 @@
             text-transform: uppercase;
         }
 
-        
         label {
             color: #FF0000; 
             display: block;
@@ -49,7 +55,6 @@
             font-weight: bold;
         }
 
-        
         input, select, textarea {
             width: 100%;
             padding: 10px;
@@ -58,10 +63,8 @@
             border-radius: 5px;
             background: #222;
             color: white; 
-            box-sizing: border-box;
         }
 
-        
         button {
             background-color: #FF0000;
             color: #FFD700;
@@ -80,114 +83,121 @@
             transform: scale(1.02);
         }
 
-       
-/* Footer */
+        /* Footer Responsive Settings */
+        .foot-panel1 {
+            background-color: #121212;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.foot-panel1 {
-    background-color: #121212;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .foot-panel1 a {
+            text-decoration: none;
+            color: rgb(255, 251, 0);
+            font-size: 1.2rem;
+        }
 
-}
+        .foot-panel2 {
+            background-color: #121212;
+            padding: 40px 20px;
+            color: rgb(255, 251, 0);
+            display: flex;
+            flex-wrap: wrap; /* Columns ko mobile pe neeche lane ke liye */
+            justify-content: space-evenly;
+            border-top: 1px solid black;
+        }
 
-.foot-panel1 a {
-    text-decoration: none;
-    color: rgb(255, 251, 0);
-    font-size: 1.5rem;
-}
+        ul {
+            margin-top: 20px;
+            list-style: none;
+            min-width: 200px; /* Choti screen pe width handle karne ke liye */
+        }
 
-.foot-panel2 {
-    background-color: #121212;
-    height: 330px;
-    color: rgb(255, 251, 0);
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: space-evenly;
-    border-top: 1px solid black;
-}
+        ul a {
+            display: block;
+            color: red;
+            font-size: 1rem;
+            margin-top: 10px;
+            text-decoration: none;
+        }
 
-ul {
-    margin-top: 70px;
-}
+        .foot-panel3 {
+            background-color: #121212;
+            padding: 20px 0;
+            border-top: 2px solid;
+            display: flex;
+            justify-content: center;
+        }
 
-ul a {
-    display: block;
-    color: red;
-    font-size: 1rem;
-    margin-top: 10px;
+        .foot-logo {
+            background-image: url("https://assets.indolj.io/upload/1751470831-1658409985-Logo-california-(1).png?q=10");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 90px;
+            width: 160px;
+        }
 
-}
+        .foot-panel4 {
+            border-top: 1px solid black;
+            padding: 20px;
+            background-color: #121212;
+            color: red;
+            text-align: center;
+        }
 
-.foot-panel3 {
-    background-color: #121212;
-    height: 120px;
-    border-top: 2px solid;
-    display: flex;
-    justify-content: center;
-}
+        .foot-pages a {
+            margin: 0 10px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
 
-.foot-logo {
-    background-image: url("https://assets.indolj.io/upload/1751470831-1658409985-Logo-california-(1).png?q=10");
-    background-size: cover;
-    height: 90px;
-    width: 160px;
-    margin-top: 5px;
-}
-
-.foot-panel4 {
-    border-top: 1px solid black;
-    height: 60px;
-    background-color: #121212;
-    color: red;
-    font-size: 1rem;
-    text-align: center;
-
-}
-
-.foot-pages {
-    padding-top: 10px;
-}
-
-.copyright {
-    padding-top: 10px;
-}
+        /* Media Query for Mobile */
+        @media (max-width: 600px) {
+            .feedback-container {
+                padding: 20px;
+            }
+            .foot-panel2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="feedback-container">
-        <h2>PIZZA FEEDBACK</h2>
-        
-        <form>
-            <label>Customer Name</label>
-            <input type="text" placeholder="Enter your name" required>
+    <div class="main-content">
+        <div class="feedback-container">
+            <h2>PIZZA FEEDBACK</h2>
+            
+            <form>
+                <label>Customer Name</label>
+                <input type="text" placeholder="Enter your name" required>
 
-            <label>Pizza Quality</label>
-            <select>
-                <option>Excellent</option>
-                <option>Good</option>
-                <option>Average</option>
-                <option>Poor</option>
-            </select>
+                <label>Pizza Quality</label>
+                <select>
+                    <option>Excellent</option>
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Poor</option>
+                </select>
 
-            <label>Delivery Speed</label>
-            <select>
-                <option>Very Fast</option>
-                <option>On Time</option>
-                <option>Late</option>
-            </select>
+                <label>Delivery Speed</label>
+                <select>
+                    <option>Very Fast</option>
+                    <option>On Time</option>
+                    <option>Late</option>
+                </select>
 
-            <label>Your Message (Red Text)</label>
-            <textarea rows="4" placeholder="How was your pizza?"></textarea>
+                <label>Your Message (Red Text)</label>
+                <textarea rows="4" placeholder="How was your pizza?"></textarea>
 
-            <button type="submit">SUBMIT FEEDBACK</button>
-        </form>
+                <button type="submit">SUBMIT FEEDBACK</button>
+            </form>
+        </div>
     </div>
-
-    <!-- Footer -->
 
     <footer>
         <div class="foot-panel1">
@@ -196,35 +206,25 @@ ul a {
 
         <div class="foot-panel2">
             <ul>
-                <p>Get to Know About Pizza Category</p>
+                <p><strong>Pizza Categories</strong></p>
                 <a>Stuffed Pizza Roll</a>
                 <a>Winter Treats Deals</a>
                 <a>Class Flavours Pizza</a>
                 <a>Premium Flavour Pizza</a>
-                <a>Double Decker Pizza</a>
-                <a>Pizza Deal</a>
-                <a>Pick Your Pair</a>
-                <a>Say Less, Staff More</a>
-                
             </ul>
 
             <ul>
-                <p>Contact Us</p>
+                <p><strong>Contact Us</strong></p>
                 <a>📞 021-111-753-753</a>
                 <a>📧 callcenter@ca-pizza.com.pk</a>
                 <a>📍 Up More</a>
-                </ul>
-
-            <ul>
-                <p>Follow Us</p>
-                <a>Facebook</a>
-                <a>Instagram</a>
-                <a>Twitter</a>
             </ul>
 
             <ul>
-                <p>Get The App!</p>
-                <a>App is where the fun is! It's Easy, Fast and Convenient</a>
+                <p><strong>Follow Us</strong></p>
+                <a>Facebook</a>
+                <a>Instagram</a>
+                <a>Twitter</a>
             </ul>
         </div>
 
@@ -236,10 +236,9 @@ ul a {
             <div class="foot-pages">
                 <a>Conditions of Use</a>
                 <a>Privacy Notice</a>
-                <a>Consumer Health Data Privacy Disclosure</a>
                 <a>Your Ads Privacy Choices</a>
             </div>
-            <div class="copyright">© 1996-2025, Dealexpress.com, Inc. or its affiliates</div>
+            <div class="copyright">© 1996-2026, Dealexpress.com, Inc.</div>
         </div>
     </footer>
 </body>

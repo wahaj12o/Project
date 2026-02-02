@@ -792,125 +792,320 @@ img {
     color: aliceblue;
 }
 
-/* Sidebar Cart */
-.cart-sidebar {
+/* Modal Styles */
+.modal {
+    display: none;
     position: fixed;
-    right: -400px;
-    top: 0;
-    width: 350px;
-    height: 100%;
-    background: rgb(0, 0, 0);
     z-index: 1000;
-    transition: 0.4s;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #121212;
+    margin: 5% auto;
+    padding: 30px;
+    border: 3px solid gold;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    color: white;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #ff0000;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #ff6b6b;
+}
+
+#modalPizzaName {
+    color: gold;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#modalPizzaPrice {
+    color: #28a745;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Size Selection */
+.size-section h3, .flavors-section h3, .order-summary h3 {
+    color: gold;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.size-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.size-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.size-option:hover {
+    border-color: gold;
+    background-color: #222;
+}
+
+.size-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.size-option span:not(.size-price) {
+    flex-grow: 1;
+    font-size: 18px;
+    color: white;
+}
+
+.size-price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Flavors Selection */
+.flavors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.flavor-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.flavor-option:hover {
+    border-color: #ff6b6b;
+}
+
+.flavor-option input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.flavor-option span {
+    color: white;
+    font-size: 16px;
+}
+
+.flavor-error {
+    color: #ff6b6b;
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border: 2px solid #333;
+}
+
+.summary-details {
     display: flex;
     flex-direction: column;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    gap: 15px;
 }
 
-.cart-sidebar.active {
-    right: 0;
-}
-
-.cart-header {
-    background: #b30000;
-    color: white;
-    padding: 20px;
+.summary-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.close-cart {
-    cursor: pointer;
-    font-size: 24px;
-}
-
-#cart-items-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 15px;
-    color: #b30000;
-    font-size: 18px;
-}
-
-/* Cart Item Row */
-.cart-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
 }
 
-.cart-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
+.summary-item:last-child {
+    border-bottom: none;
 }
 
-.qty-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f0f0f0;
-    border-radius: 15px;
-    padding: 2px 10px;
-}
-
-.qty-controls button {
-    border: none;
+.summary-item.total {
+    font-size: 22px;
     font-weight: bold;
-    cursor: pointer;
-    color: #b30000;
-    font-size: 18px;
+    color: gold;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid gold;
 }
 
-/* Floating Button */
-.floating-cart {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #b30000;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+/* Action Buttons */
+.modal-actions {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 500;
+    margin-top: 30px;
 }
 
-#cart-count {
+.confirm-btn, .cancel-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Thank You Message */
+.thank-you-message {
+    display: none;
     position: absolute;
     top: 0;
-    right: 5px;
-    background: gold;
-    padding: 2px 7px;
-    border-radius: 50%;
-    font-size: 12px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.thank-you-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 3px solid gold;
+    width: 80%;
+    max-width: 500px;
+}
+
+.thank-you-content h2 {
+    color: gold;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.thank-you-content p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+#orderId {
+    color: #28a745;
     font-weight: bold;
 }
 
-.cart-footer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-    color: #e63946;
-    font-size: 18px;
-}
-
-.checkout-btn {
-    width: 100%;
-    background: #28a745;
+.close-thankyou {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 5px;
+    transition: all 0.3s;
 }
+
+.close-thankyou:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .size-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .flavors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .confirm-btn, .cancel-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 15px;
+    }
+    
+    #modalPizzaName {
+        font-size: 22px;
+    }
+    
+    .size-option, .flavor-option {
+        padding: 10px;
+    }
+}
+
 
 /* Foot-panel */
 

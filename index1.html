@@ -8,16 +8,138 @@
     <link rel="stylesheet" href="index1.css">
 </head>
 <body>
+    <!-- //////////// -->
+     <!-- Order Modal -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalPizzaName"></h2>
+        <p id="modalPizzaPrice"></p>
+        
+        <!-- Size Selection -->
+        <div class="size-section">
+            <h3>Select Size:</h3>
+            <div class="size-options">
+                <label class="size-option">
+                    <input type="radio" name="size" value="small" data-price="0">
+                    <span>Small</span>
+                    <span class="size-price">+ Rs.0</span>
+                </label>
+                <label class="size-option">
+                    <input type="radio" name="size" value="medium" data-price="100" checked>
+                    <span>Medium</span>
+                    <span class="size-price">+ Rs.100</span>
+                </label>
+                <label class="size-option">
+                    <input type="radio" name="size" value="large" data-price="200">
+                    <span>Large</span>
+                    <span class="size-price">+ Rs.200</span>
+                </label>
+                <label class="size-option">
+                    <input type="radio" name="size" value="jumbo" data-price="300">
+                    <span>Jumbo</span>
+                    <span class="size-price">+ Rs.300</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Flavors Selection -->
+        <div class="flavors-section">
+            <h3>Select 2 Flavors (Choose 2):</h3>
+            <div class="flavors-grid">
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Pepperoni">
+                    <span>Pepperoni</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Chicken Tikka">
+                    <span>Chicken Tikka</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Chicken Fajita">
+                    <span>Chicken Fajita</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Supreme">
+                    <span>Supreme</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Mexican">
+                    <span>Mexican</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Veggie Lover">
+                    <span>Veggie Lover</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Cheese Lover">
+                    <span>Cheese Lover</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Afghani">
+                    <span>Afghani</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Bihari">
+                    <span>Bihari</span>
+                </label>
+                <label class="flavor-option">
+                    <input type="checkbox" name="flavor" value="Arabian">
+                    <span>Arabian</span>
+                </label>
+            </div>
+            <div class="flavor-error" id="flavorError">Please select exactly 2 flavors</div>
+        </div>
+        
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-details">
+                <div class="summary-item">
+                    <span>Base Price:</span>
+                    <span id="basePrice">Rs.0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Size Upgrade:</span>
+                    <span id="sizePrice">Rs.0</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="totalPrice">Rs.0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="modal-actions">
+            <button id="confirmOrder" class="confirm-btn">Confirm Order</button>
+            <button id="cancelOrder" class="cancel-btn">Cancel</button>
+        </div>
+        
+        <!-- Thank You Message (Hidden Initially) -->
+        <div id="thankYouMessage" class="thank-you-message">
+            <div class="thank-you-content">
+                <h2>Thank You! 🎉</h2>
+                <p>Your order has been placed successfully!</p>
+                <p>Order ID: <span id="orderId">CPZ-</span></p>
+                <p>Estimated Delivery: 30-45 minutes</p>
+                <button id="closeThankYou" class="close-thankyou">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- //////////// -->
     <div id="parent-container">
         <nav id="navbar">
         <a href="#">Home</a>
         <a href="Menu Page.html">Menu</a>
         <a href="Contact Us.html">Contact Us</a>
         <a href="Frenchise.html">Frenchise</a>
+        <a href="feedback.html">Feedback Form</a> 
         </nav>
 
         <section id="hero-section">
-            <img src="\Images (Folder)\corner.jpg">
+            <img src="Images\corner.jpg">
         </section>
         <div class="navbar-wrapper">
             <button class="arrows" onclick="scrollNavbar(-200)">&#10094;</button>
@@ -529,27 +651,6 @@
         </div>
     </section>
 
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h2>Basket For Items</h2>
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
-        </div>
-        <div id="cart-items-list">
-            <div class="empty-cart-msg">Cart Are Empty Now!</div>
-        </div>
-        <div class="cart-footer">
-            <div class="subtotal">
-                <span>Total:</span>
-                <span id="total-bill">Rs. 0</span>
-            </div>
-            <button class="checkout-btn">Order Now</button>
-        </div>
-    </div>
-
-    <div class="floating-cart" onclick="toggleCart()">
-        <span id="cart-count">0</span>
-        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" width="30">
-    </div>
     
     <!-- Footer -->
 
