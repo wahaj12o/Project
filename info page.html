@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Pizza</title>
+    <link rel="stylesheet" href="info-page.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="\video-file.mp4" type="video/mp4">
+    </video>
+
+    <div class="ui-layer">
+        <button class="welcome-btn" onclick="toggleModal(true)">WELCOME</button>
+
+        <button class="orange-btn" onclick="toggleModal(true)"><a href="index1.html">CLICK HERE</a></button>
+    </div>
+
+    <div id="welcomePopup" class="modal-bg">
+        <div class="modal-box">
+            <h2>Welcome!</h2>
+            <p>Welcome to our website!</p>
+            <button class="close-btn" onclick="toggleModal(false)">Close</button>
+        </div>
+    </div>
+
+    <script src="info-page.js"></script>
+
+
+</body>
+
+</html>
